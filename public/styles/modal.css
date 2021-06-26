@@ -1,6 +1,7 @@
 .modal-wrapper.active {
   visibility: visible;
   opacity: 1;
+  transition: 0.3s;
 }
 
 .modal-wrapper {
@@ -15,7 +16,6 @@
 
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s;
 }
 
 .modal-wrapper .modal {
