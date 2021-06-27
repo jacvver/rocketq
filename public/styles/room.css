@@ -174,3 +174,34 @@
   margin-top: 1.3rem;
   line-height: 1.9rem;
 }
+
+/* alertas */
+
+.alertBox {
+  font-family: poppins, sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.9rem;
+  text-shadow: 0 0 0.1rem var(--black);
+
+  background: var(--blue);
+  color: var(--light-blue);
+  padding: 2rem 3.5rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 0.5rem 0rem rgba(0, 0, 0, 0.294);
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.alertBox.alert-on {
+  opacity: 1;
+  visibility: visible;
+}

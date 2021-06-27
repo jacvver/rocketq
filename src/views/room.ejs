@@ -22,6 +22,7 @@
     />
     <!-- SCRIPT -->
     <script src="/scripts/main.js" defer type="module"></script>
+    <script src="/scripts/copytocp.js"></script>
   </head>
   <body>
     <div id="room" class="content">
@@ -31,10 +32,10 @@
         </a>
 
         <div class="buttons">
-          <div class="button outlined" id="room-id" data-id="<%= roomId %>">
-            #<%= roomId %>
+          <button class="button outlined" id="room-id" data-id="<%= roomId %>" onclick="copy('roomid')">
+            #<p id="roomid"><%= roomId %></p>
             <img src="/images/copy.svg" alt="Copiar código da sala" />
-          </div>
+          </button>
 
           <a href="/create-pass" class="button">
             <img src="/images/users-white.svg" alt="Criar uma sala" />
@@ -42,6 +43,10 @@
           </a>
         </div>
       </header>
+
+      <div class="alertBox">
+        <div id="idCopied">ID copiado!</div>
+      </div>
 
       <main>
         <section id="question-form">

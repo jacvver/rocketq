@@ -91,7 +91,7 @@ button:hover,
 }
 
 button > img,
- .button > img {
+.button > img {
   margin-right: 1rem;
   width: 2rem;
 }
@@ -104,7 +104,7 @@ button.outlined,
 }
 
 button.red,
-.button.red{
+.button.red {
   background: var(--red);
 }
 
