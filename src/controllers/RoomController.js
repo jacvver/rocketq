@@ -49,8 +49,21 @@ module.exports = {
         res.render("room", {roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions})
     },
 
-    enter(req, res){
-        const roomId = req.body.roomId
+
+    /* Entra na sala */
+    async enter(req, res){
+        const roomId = Number(req.body.roomId)
+        const db = await Database()
+        const dbRooms = await db.all(`SELECT id FROM rooms`)
+
+        // Converte em Array o Objeto gerado pelo Select e verifica se a sala digitada existe no BD
+        const roonsArr = dbRooms.map(iten => iten.id)
+        isRoom = roonsArr.some(isRoomExist => isRoomExist === roomId);
+        await db.close()
+
+        if(!isRoom) {
+            return res.redirect('/')
+        }
 
         res.redirect(`/room/${roomId}`)
     }
